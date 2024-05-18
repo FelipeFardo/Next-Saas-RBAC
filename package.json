@@ -1,20 +1,13 @@
 {
-  "name": "next-saas-rbac",
+  "name": "saas",
   "private": true,
   "scripts": {
     "build": "turbo build",
     "dev": "turbo dev",
-    "lint": "turbo lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "lint": "turbo lint"
   },
   "devDependencies": {
-    "@saas/eslint-config": "*",
-    "@saas/typescript-config": "*",
-    "prettier": "^3.2.5",
     "turbo": "latest"
-  },
-  "engines": {
-    "node": ">=18"
   },
   "packageManager": "npm@10.5.2",
   "workspaces": [
