@@ -18,7 +18,8 @@ import { createAccount } from './routes/auth/create-account'
 import { getProfile } from './routes/auth/get-profile'
 import { requestPasswordRecover } from './routes/auth/request-passoword-recover'
 import { resetPassword } from './routes/auth/reset-password'
-import { createOrganization } from './orgs/create-organization'
+import { createOrganization } from './routes/orgs/create-organization'
+import { getMembership } from './routes/orgs/get-membership'
 
 const app = fastify().withTypeProvider<ZodTypeProvider>()
 
@@ -31,7 +32,7 @@ app.register(fastifySwagger, {
   openapi: {
     info: {
       title: 'Next.js SaaS',
-      description: 'Full-stack Saas app with multi-tenant & RBAC.',
+      description: 'Full-stack SaaS app with multi-tenant & RBAC.',
       version: '1.0.0',
     },
     components: {
@@ -64,6 +65,7 @@ app.register(requestPasswordRecover)
 app.register(resetPassword)
 app.register(authenticateWithGithub)
 app.register(createOrganization)
+app.register(getMembership)
 
 app.listen({ port: env.SERVER_PORT }).then(() => {
   console.log('HTTP server running!')
