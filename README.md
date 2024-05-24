@@ -22,8 +22,8 @@ This project contains all the necessary boilerplate to setup a multi-tenant SaaS
 ### Invites
 
 - [X] It should be able to invite a new member (e-mail, role);
-- [ ] It should be able to accept an invite;
-- [ ] It should be able to revoke a pending invite;
+- [X] It should be able to accept an invite;
+- [X] It should be able to revoke a pending invite;
 
 ### Members
 
@@ -39,7 +39,7 @@ This project contains all the necessary boilerplate to setup a multi-tenant SaaS
 
 ### Billing
 
-- [ ] It should be able to get billing details for organization ($20 per project / $10 per member excluding billing role);
+- [X] It should be able to get billing details for organization ($20 per project / $10 per member excluding billing role);
 
 ## RBAC
 
