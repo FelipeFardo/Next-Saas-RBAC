@@ -104,7 +104,13 @@ This project was developed with the following technologies:
 
 ### Documentation
 
-http://localhost:3333/docs
+#### Swagger docs
+![Swagger docs](https://github.com/FelipeFardo/Assets/blob/main/Next-SaaS-RBAC/Screenshot_01.png)
+
+#### Route example
+![Example docs](https://github.com/FelipeFardo/Assets/blob/main/Next-SaaS-RBAC/Screenshot_02.png)
+
+
 
 ## 📝 License
 
