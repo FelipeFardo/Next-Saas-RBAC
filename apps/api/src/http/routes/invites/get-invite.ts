@@ -39,7 +39,7 @@ export async function getInvite(app: FastifyInstance) {
         },
       },
     },
-    async (request, reply) => {
+    async (request) => {
       const { inviteId } = request.params
 
       const invite = await prisma.invite.findUnique({
@@ -70,9 +70,9 @@ export async function getInvite(app: FastifyInstance) {
         throw new BadRequestError('Invite not found')
       }
 
-      return reply.status(201).send({
+      return {
         invite,
-      })
+      }
     },
   )
 }
