@@ -2,7 +2,7 @@
 
 This project contains all the necessary boilerplate to setup a multi-tenant SaaS with Next.js including authentication and RBAC authorization.
 
-## Features
+## 📌 Features
 
 ### Authentication
 
@@ -41,7 +41,7 @@ This project contains all the necessary boilerplate to setup a multi-tenant SaaS
 
 - [X] It should be able to get billing details for organization ($20 per project / $10 per member excluding billing role);
 
-## RBAC
+## 🛡️ RBAC
 
 Roles & permissions.
 
@@ -80,3 +80,32 @@ Roles & permissions.
 - Only owners may transfer organization ownership;
 - Only administrators and project authors may update/delete the project;
 - Members can leave their own organization;
+
+
+## 🚀 Technologies
+
+This project was developed with the following technologies:
+
+- Typescript
+- Node
+- Fastify
+- Casl
+- Swagger
+- Prisma
+- PostgreSQL
+- Docker
+- Turborepo
+
+## 🖲️ Getting Started
+```sh
+ - npm install
+ - npm run dev
+```
+
+### Documentation
+
+http://localhost:3333/docs
+
+## 📝 License
+
+This project is under MIT license.
