@@ -10,9 +10,7 @@
     "turbo": "latest"
   },
   "packageManager": "pnpm@9.1.4",
-  "workspaces": [
-    "apps/*",
-    "packages/*",
-    "config/*"
-  ]
+  "engines": {
+    "node": ">=18"
+  }
 }
