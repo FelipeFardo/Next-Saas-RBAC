@@ -2,9 +2,9 @@
   "name": "@saas/api",
   "version": "1.0.0",
   "scripts": {
-    "dev": "npm run env:load tsx watch src/http/server.ts",
-    "db:migrate": "npm run env:load prisma migrate dev",
-    "db:studio": "npm run env:load prisma studio",
+    "dev": "pnpm run env:load tsx watch src/http/server.ts",
+    "db:migrate": "pnpm run env:load prisma migrate dev",
+    "db:studio": "pnpm run env:load prisma studio",
     "env:load": "dotenv -e ../../.env --"
   },
   "dependencies": {
@@ -33,7 +33,7 @@
     "tsx": "^4.10.5"
   },
   "prisma": {
-    "seed": "npm run env:load tsx prisma/seed.ts"
+    "seed": "tsx prisma/seed.ts"
   },
   "prettier": "@saas/prettier",
   "eslintConfig": {
