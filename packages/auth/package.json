@@ -5,9 +5,9 @@
   "main": "src/index.ts",
   "types": "src/index.ts",
   "devDependencies": {
-    "@saas/eslint-config": "*",
-    "@saas/prettier": "*",
-    "@saas/tsconfig": "*"
+    "@saas/eslint-config": "workspace:*",
+    "@saas/prettier": "workspace:*",
+    "@saas/tsconfig": "workspace:*"
   },
   "eslintConfig": {
     "extends": [
