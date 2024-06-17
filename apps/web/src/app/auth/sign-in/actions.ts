@@ -37,7 +37,6 @@ export async function signInWithEmailAndPassword(data: FormData) {
   } catch (err) {
     if (err instanceof HTTPError) {
       const { message } = await err.response.json()
-      console.log(message)
 
       return { success: false, message, errors: null }
     }
