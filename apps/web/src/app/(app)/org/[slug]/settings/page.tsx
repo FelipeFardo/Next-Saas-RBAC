@@ -9,6 +9,7 @@ import {
 } from '@/components/ui/card'
 import { getOrganization } from '@/http/get-organization'
 
+import { Billing } from './billing'
 import { ShutdownOrganizatonButton } from './shutdown-organization-button'
 
 export default async function Projects() {
@@ -46,7 +47,7 @@ export default async function Projects() {
             </CardContent>
           </Card>
         )}
-        {canGetBilling && <div>Billing</div>}
+        {canGetBilling && <Billing />}
 
         {canShutdownOrganization && (
           <Card>
