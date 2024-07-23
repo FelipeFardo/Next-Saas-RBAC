@@ -1,6 +1,6 @@
 import { api } from './api-client'
 
-interface getOrganizationsResponse {
+interface GetOrganizationsResponse {
   organizations: {
     id: string
     name: string
@@ -10,7 +10,7 @@ interface getOrganizationsResponse {
 }
 
 export async function getOrganizations() {
-  const result = await api.get('organizations').json<getOrganizationsResponse>()
+  const result = await api.get('organizations').json<GetOrganizationsResponse>()
 
   return result
 }

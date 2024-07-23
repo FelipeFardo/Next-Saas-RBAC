@@ -1,6 +1,6 @@
 import { api } from './api-client'
 
-interface getProfileResponse {
+interface GetProfileResponse {
   user: {
     id: string
     name: string | null
@@ -10,7 +10,7 @@ interface getProfileResponse {
 }
 
 export async function getProfile() {
-  const result = await api.get('profile').json<getProfileResponse>()
+  const result = await api.get('profile').json<GetProfileResponse>()
 
   return result
 }
