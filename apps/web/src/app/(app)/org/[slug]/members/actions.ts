@@ -9,6 +9,7 @@ import { getCurrentOrg } from '@/auth/auth'
 import { createInvite } from '@/http/create-invite'
 import { removeMember } from '@/http/remove-member'
 import { revokeInvite } from '@/http/revoke-invite'
+import { transferOwnership } from '@/http/transfer-ownership'
 import { updateMember } from '@/http/update-member'
 
 export async function removeMemberAction(memberId: string) {
@@ -28,6 +29,15 @@ export async function updateMemberAction(memberId: string, role: Role) {
     org: currentOrg!,
     memberId,
     role,
+  })
+  revalidateTag(`${currentOrg}/members`)
+}
+export async function transferOwnershipAction(memberId: string) {
+  const currentOrg = getCurrentOrg()
+
+  await transferOwnership({
+    org: currentOrg!,
+    transferToUserId: memberId,
   })
   revalidateTag(`${currentOrg}/members`)
 }

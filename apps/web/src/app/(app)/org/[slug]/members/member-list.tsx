@@ -10,7 +10,7 @@ import { getMembers } from '@/http/get-members'
 import { getMembership } from '@/http/get-membership'
 import { getOrganization } from '@/http/get-organization'
 
-import { removeMemberAction } from './actions'
+import { removeMemberAction, transferOwnershipAction } from './actions'
 import { UpdateMemberRoleSelect } from './update-member-role-select'
 
 export async function MemberList() {
@@ -70,10 +70,17 @@ export async function MemberList() {
                         'transfer_ownership',
                         authOrganization,
                       ) && (
-                        <Button size="sm" variant="ghost">
-                          <ArrowLeftRight className="mr-2 size-4" />
-                          Transfer ownership
-                        </Button>
+                        <form
+                          action={transferOwnershipAction.bind(
+                            null,
+                            member.userId,
+                          )}
+                        >
+                          <Button size="sm" variant="ghost">
+                            <ArrowLeftRight className="mr-2 size-4" />
+                            Transfer ownership
+                          </Button>
+                        </form>
                       )}
                       <UpdateMemberRoleSelect
                         memberId={member.id}
