@@ -23,6 +23,7 @@ export default async function Projects() {
   const { organization } = await getOrganization(currentOrg!)
 
   return (
+    // <pre>{JSON.stringify(organization, null, 2)}</pre>
     <div className="space-y-4">
       <h1 className="text-2xl font-bold">Settings</h1>
       <div className="space-y-4">

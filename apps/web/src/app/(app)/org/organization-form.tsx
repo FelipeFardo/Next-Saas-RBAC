@@ -28,12 +28,9 @@ export function OrganizationForm({
     ? updateOrganizationAction
     : createOrganizationAction
 
-  const [{ errors, message, success }, handleSubmit, isPending] = useFormState(
-    formAction,
-    // () => {
-    //   router.push('/auth/sign-in')
-    // },
-  )
+  const [{ errors, message, success }, handleSubmit, isPending] =
+    useFormState(formAction)
+
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
       {success === false && message && (
