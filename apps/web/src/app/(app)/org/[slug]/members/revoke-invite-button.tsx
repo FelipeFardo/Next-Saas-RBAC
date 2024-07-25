@@ -15,7 +15,7 @@ export async function RevokeInviteButton({
     <form action={revokeInviteAction.bind(null, inviteId)}>
       <Button size="sm" variant="destructive">
         <XOctagon className="mr-2 size-4" />
-        Remoke invite
+        Revoke invite
       </Button>
     </form>
   )
