@@ -1,3 +1,5 @@
+import { organizationSchema } from '@saas/auth'
+
 import { OrganizationForm } from '@/app/(app)/org/organization-form'
 import { ability, getCurrentOrg } from '@/auth/auth'
 import {
@@ -16,11 +18,13 @@ export default async function Projects() {
   const currentOrg = getCurrentOrg()
   const permissions = await ability()
 
+  const { organization } = await getOrganization(currentOrg!)
   const canUpdateOrganization = permissions?.can('update', 'Organization')
   const canGetBilling = permissions?.can('get', 'Billing')
-  const canShutdownOrganization = permissions?.can('delete', 'Organization')
 
-  const { organization } = await getOrganization(currentOrg!)
+  const authOrganization = organizationSchema.parse(organization)
+
+  const canShutdownOrganization = permissions?.can('delete', authOrganization)
 
   return (
     <div className="space-y-4">
