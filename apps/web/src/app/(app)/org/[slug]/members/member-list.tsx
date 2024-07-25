@@ -95,7 +95,7 @@ export async function MemberList() {
                         <form action={removeMemberAction.bind(null, member.id)}>
                           <Button
                             disabled={
-                              member.userId === membership.userId &&
+                              member.userId === membership.userId ||
                               member.userId === organization.ownerId
                             }
                             type="submit"
