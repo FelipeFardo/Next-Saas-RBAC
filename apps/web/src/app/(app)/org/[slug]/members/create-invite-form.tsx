@@ -40,11 +40,6 @@ export function CreateInviteForm() {
             type="email"
             placeholder="john@example.com"
           />
-          {errors?.email && (
-            <p className="text-xs font-medium text-red-500 dark:text-red-400">
-              {errors.email[0]}
-            </p>
-          )}
         </div>
         <Select name="role" defaultValue="MEMBER">
           <SelectTrigger className="w-32">
@@ -67,6 +62,11 @@ export function CreateInviteForm() {
           )}
         </Button>
       </div>
+      {errors?.email && (
+        <p className="text-xs font-medium text-red-500 dark:text-red-400">
+          {errors.email[0]}
+        </p>
+      )}
     </form>
   )
 }
