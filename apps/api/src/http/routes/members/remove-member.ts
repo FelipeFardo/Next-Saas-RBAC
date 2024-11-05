@@ -1,3 +1,4 @@
+import { userSchema } from '@saas/auth'
 import type { FastifyInstance } from 'fastify'
 import type { ZodTypeProvider } from 'fastify-type-provider-zod'
 import { z } from 'zod'
@@ -37,7 +38,31 @@ export async function removeMember(app: FastifyInstance) {
 
         const { cannot } = getUserPermissions(userId, membership.role)
 
-        if (cannot('delete', 'User')) {
+        const memberRemove = await prisma.member.findUnique({
+          where: {
+            id: memberId,
+            organizationId: organization.id,
+          },
+          include: {
+            organization: true,
+          },
+        })
+
+        if (!memberRemove) {
+          throw new UnauthorizedError(
+            `You're not allowed to remove this member from the organization`,
+          )
+        }
+
+        const userRemoveFormat = {
+          id: memberRemove.id,
+          role: memberRemove.role,
+          owner: memberRemove.id === organization.ownerId,
+        }
+
+        const userRemove = userSchema.parse(userRemoveFormat)
+
+        if (cannot('delete', userRemove)) {
           throw new UnauthorizedError(
             `You're not allowed to remove this member from the organization`,
           )

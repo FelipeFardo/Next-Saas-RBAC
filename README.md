@@ -102,13 +102,10 @@ This project was developed with the following technologies:
  - npm run dev
 ```
 
-### Documentation
+## Documentation
 
-#### Swagger docs
-![Swagger docs](https://github.com/FelipeFardo/Assets/blob/main/Next-SaaS-RBAC/Screenshot_01.png)
+[felipefardo.github.io/Next-Saas-RBAC/](https://felipefardo.github.io/Next-Saas-RBAC/)
 
-#### Route example
-![Example docs](https://github.com/FelipeFardo/Assets/blob/main/Next-SaaS-RBAC/Screenshot_02.png)
 
 
 

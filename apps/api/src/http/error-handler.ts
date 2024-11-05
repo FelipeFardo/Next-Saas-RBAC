@@ -10,21 +10,19 @@ export const errorHandler: FastifyErrorHandler = (error, request, reply) => {
   if (error instanceof ZodError) {
     return reply.status(400).send({
       message: 'Validation error',
-      error: error.flatten().fieldErrors,
+      errors: error.flatten().fieldErrors,
     })
   }
 
   if (error instanceof BadRequestError) {
     return reply.status(400).send({
-      message: 'Validation error',
-      error: error.message,
+      message: error.message,
     })
   }
 
   if (error instanceof UnauthorizedError) {
     return reply.status(401).send({
-      message: 'Validation error',
-      error: error.message,
+      message: error.message,
     })
   }
 
