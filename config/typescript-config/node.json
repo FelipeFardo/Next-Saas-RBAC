@@ -1,16 +1,21 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "display": "Node 20",
-  "_version": "20.1.0",
-
+  "display": "Library",
   "compilerOptions": {
-    "lib": ["es2023"],
-    "module": "node16",
-    "target": "es2022",
-
-    "strict": true,
+    "composite": false,
     "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "inlineSources": false,
+    "isolatedModules": true,
+    "moduleResolution": "node",
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "preserveWatchOutput": true,
     "skipLibCheck": true,
-    "moduleResolution": "node16"
+    "strict": true,
+    "jsx": "react-jsx",
+    "lib": ["DOM", "ES2015"],
+    "module": "ESNext",
+    "target": "es6",
   }
 }
