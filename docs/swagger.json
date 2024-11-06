@@ -173,7 +173,7 @@
     },
     "/password/recover": {
       "post": {
-        "summary": "Get authenticate user profile",
+        "summary": "Request password recover",
         "tags": [
           "auth"
         ],
@@ -216,7 +216,7 @@
     },
     "/password/reset": {
       "post": {
-        "summary": "Get authenticate user profile",
+        "summary": "Reset password",
         "tags": [
           "auth"
         ],
@@ -500,6 +500,10 @@
                             }
                           ]
                         },
+                        "userId": {
+                          "type": "string",
+                          "format": "uuid"
+                        },
                         "organizationId": {
                           "type": "string",
                           "format": "uuid"
@@ -508,6 +512,7 @@
                       "required": [
                         "id",
                         "role",
+                        "userId",
                         "organizationId"
                       ],
                       "additionalProperties": false
